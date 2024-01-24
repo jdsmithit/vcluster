@@ -58,7 +58,7 @@ RUN --mount=type=cache,id=gomod,target=/go/pkg/mod \
 ENTRYPOINT ["go", "run", "-mod", "vendor", "cmd/vcluster/main.go"]
 
 # we use alpine for easier debugging
-FROM alpine:3.18
+FROM alpine:3
 
 # Set root path as working directory
 WORKDIR /
