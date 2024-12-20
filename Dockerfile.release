@@ -1,5 +1,5 @@
 # Build the manager binary
-FROM alpine:3.18 as builder
+FROM alpine:3.21.0 as builder
 
 WORKDIR /vcluster-dev
 
@@ -15,7 +15,7 @@ RUN apk add --no-cache curl
 RUN curl -s https://get.helm.sh/helm-${HELM_VERSION}-linux-${TARGETARCH}.tar.gz > helm3.tar.gz && tar -zxvf helm3.tar.gz linux-${TARGETARCH}/helm && chmod +x linux-${TARGETARCH}/helm && mv linux-${TARGETARCH}/helm /usr/local/bin/helm && rm helm3.tar.gz && rm -R linux-${TARGETARCH}
 
 # we use alpine for easier debugging
-FROM alpine:3.18
+FROM alpine:3.21.0
 
 # Set root path as working directory
 WORKDIR /
